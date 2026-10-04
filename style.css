@@ -1,0 +1,57 @@
+:root {
+  --bg: #0a0709;
+  --panel: rgba(255, 255, 255, 0.05);
+  --line: rgba(255, 255, 255, 0.1);
+  --ink: #f4f3fb;
+  --dim: rgba(244, 243, 251, 0.68);
+  --faint: rgba(244, 243, 251, 0.45);
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --accent: #fb9855;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbf9f7;
+    --panel: rgba(10, 7, 9, 0.04);
+    --line: rgba(10, 7, 9, 0.12);
+    --ink: #1a1418;
+    --dim: rgba(26, 20, 24, 0.72);
+    --faint: rgba(26, 20, 24, 0.5);
+    --accent: #c2410c;
+  }
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 "Plus Jakarta Sans", -apple-system, "SF Pro Text", system-ui, sans-serif;
+  padding: 0 20px 64px;
+}
+main { max-width: 680px; margin: 0 auto; }
+header { padding: 40px 0 8px; display: flex; align-items: center; gap: 14px; }
+header img { height: 30px; width: auto; display: block; }
+h1, h2 { font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(30px, 6vw, 42px); margin: 28px 0 8px; }
+h2 { font-size: 20px; margin: 36px 0 8px; }
+p { margin: 0 0 14px; color: var(--dim); }
+.lede { font-size: 18px; color: var(--dim); }
+.meta { color: var(--faint); font-size: 14px; margin-bottom: 8px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.contact {
+  display: block; margin: 24px 0 8px; padding: 22px 24px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+  text-decoration: none; color: var(--ink);
+}
+.contact small { display: block; color: var(--faint); font-size: 13px; margin-bottom: 4px; }
+.contact strong { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 22px; font-weight: 600; word-break: break-all; }
+details { border-top: 1px solid var(--line); padding: 14px 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--faint); font-weight: 400; }
+details[open] summary::after { content: "−"; }
+details p { margin: 10px 0 0; }
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+footer a { color: var(--dim); }
